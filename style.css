@@ -1,0 +1,284 @@
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --income-color: #4cc9f0;
+  --expense-color: #f72585;
+  --owed-color: #f8961e;
+  --debt-color: #43aa8b;
+  --bg-color: #f8f9fa;
+  --card-color: #ffffff;
+  --text-color: #212529;
+  --border-color: #dee2e6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  direction: rtl;
+}
+
+.app-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 15px;
+  min-height: 100vh;
+  background-color: var(--card-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-header {
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.app-header p {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.balance-container {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.balance-container h2 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.balance-amount {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.summary-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.summary-box {
+  flex: 1;
+  background-color: var(--card-color);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.summary-box h3 {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 5px;
+}
+
+.summary-box .amount {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#owed-amount {
+  color: var(--owed-color);
+}
+
+#debt-amount {
+  color: var(--debt-color);
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #e9ecef;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+.tab-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: var(--card-color);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.transactions-container, .debts-container {
+  margin-top: 25px;
+}
+
+.transactions-container h3, .debts-container h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.transaction-list, .debt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.transaction-item, .debt-item {
+  background-color: var(--card-color);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-details, .debt-details {
+  flex: 1;
+}
+
+.transaction-title, .debt-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.transaction-note, .debt-amount {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.transaction-date, .debt-date {
+  font-size: 12px;
+  color: #adb5bd;
+}
+
+.income .transaction-title {
+  color: var(--income-color);
+}
+
+.expense .transaction-title {
+  color: var(--expense-color);
+}
+
+.owed .debt-name {
+  color: var(--owed-color);
+}
+
+.debt .debt-name {
+  color: var(--debt-color);
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--card-color);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 12px;
+}
+
+.nav-item.active {
+  color: var(--primary-color);
+}
+
+.nav-item i {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+@media (max-width: 400px) {
+  .app-container {
+    padding: 15px 10px;
+  }
+  
+  input, select, .submit-btn {
+    padding: 10px 12px;
+  }
+  
+  .transaction-item, .debt-item {
+    padding: 12px;
+  }
+}
