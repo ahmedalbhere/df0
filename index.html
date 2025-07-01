@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كناش - المدخول والمصروف</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1><i class="fas fa-wallet"></i> كناش</h1>
+      <p>تطبيق إدارة المدخول والمصروف</p>
+    </header>
+
+    <div class="balance-container">
+      <h2>الرصيد الحالي</h2>
+      <div class="balance-amount" id="balance">0 جنيه</div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" id="income-tab">مدخول</button>
+      <button class="tab-btn" id="expense-tab">مصروف</button>
+    </div>
+
+    <form id="transaction-form" class="transaction-form">
+      <div class="form-group">
+        <input type="number" id="amount" placeholder="المبلغ (جنيه)" required>
+      </div>
+      <div class="form-group">
+        <input type="text" id="note" placeholder="الوصف (اختياري)">
+      </div>
+      <div class="form-group">
+        <input type="date" id="date" required>
+      </div>
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-plus"></i> إضافة
+      </button>
+    </form>
+
+    <div class="transactions-container">
+      <h3><i class="fas fa-history"></i> السجل</h3>
+      <div id="transaction-list" class="transaction-list"></div>
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item active">
+        <i class="fas fa-wallet"></i>
+        <span>المال</span>
+      </a>
+      <a href="debts.html" class="nav-item">
+        <i class="fas fa-hand-holding-usd"></i>
+        <span>الديون</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="transactions.js"></script>
+</body>
+</html>
