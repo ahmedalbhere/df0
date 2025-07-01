@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كناش - سجل الديون</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1><i class="fas fa-hand-holding-usd"></i> كناش</h1>
+      <p>تطبيق إدارة الديون</p>
+    </header>
+
+    <div class="summary-container">
+      <div class="summary-box">
+        <h3>ديون عليك</h3>
+        <div class="amount" id="owed-amount">0 جنيه</div>
+      </div>
+      <div class="summary-box">
+        <h3>ديون لك</h3>
+        <div class="amount" id="debt-amount">0 جنيه</div>
+      </div>
+    </div>
+
+    <form id="debt-form" class="debt-form">
+      <div class="form-group">
+        <input type="text" id="name" placeholder="اسم العميل" required>
+      </div>
+      <div class="form-group">
+        <input type="number" id="amount" placeholder="المبلغ (جنيه)" required>
+      </div>
+      <div class="form-group">
+        <select id="type" required>
+          <option value="">اختر النوع</option>
+          <option value="owed">دين عليك</option>
+          <option value="debt">دين لك</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-plus"></i> إضافة
+      </button>
+    </form>
+
+    <div class="debts-container">
+      <h3><i class="fas fa-list"></i> سجل الديون</h3>
+      <div id="debt-list" class="debt-list"></div>
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item">
+        <i class="fas fa-wallet"></i>
+        <span>المال</span>
+      </a>
+      <a href="debts.html" class="nav-item active">
+        <i class="fas fa-hand-holding-usd"></i>
+        <span>الديون</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="debts.js"></script>
+</body>
+</html>
